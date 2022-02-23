@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const cors = rquire('cors');
+const cors = require('cors');
 const dotenv = require("dotenv").config();
 
 const fs = require("fs");

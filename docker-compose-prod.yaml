@@ -12,11 +12,13 @@ services:
     expose:
       - 8000
     environment:
-      - MONGO_USER=admin
-      - MONGO_PASSWORD=password
-      - REDIS_PORT=6379
-      - JWT_SECRET=secret
-      - PORT=8000
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_IP=${MONGO_IP}
+      - MONGO_PORT=${MONGO_PORT}
+      - REDIS_PORT=${REDIS_PORT}
+      - JWT_SECRET=${JWT_SECRET}
+      - PORT=${PORT}
     volumes:
       - appLogs:/app/logs
     command: npm run start
@@ -28,8 +30,8 @@ services:
     # ports:
     #   - 27017:27017
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     networks:
       - express-mongo
     volumes:
